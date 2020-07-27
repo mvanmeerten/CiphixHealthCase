@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h2 class="display-4"> Ciphix Health </h2>
+            <br>
+            <form class="filestyle" action="{{ url_for('index') }}" method="POST" enctype="multipart/form-data" lang="en">
+                {{ form.hidden_tag() }}
+                {{ form.file( class="btn btn-outline-dark" ) }}
+                {{ form.submit( class="btn btn-primary" ) }}
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="list-group col-sm">
+                <h5>Extracted Entities</h5>
+                {% for entity in entities %}
+                    <div class="list-group-item">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">{{ entity['Text'] }}</h6>
+                        </div>
+                        <p class="mb-1">Category: {{ entity['Category'] }}</p>
+                        <p class="mb-1">Type: {{ entity['Type'] }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col-sm">
+                <h5>Original Text</h5>
+                {{ text }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
