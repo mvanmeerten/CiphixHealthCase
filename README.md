@@ -8,10 +8,10 @@ $ git clone https://github.com/mvanmeerten/CiphixHealthCase.git
 $ cd CiphixHealthCase/PredictAPI; pip install -r requirements.txt
 ```
 
-To use AWS comprehend medical, follow steps 1 and 2 in the [getting started section](https://docs.aws.amazon.com/comprehend/latest/dg/getting-started.html) of AWS Comprehend Medical. Here you will create an AWS account and install and configure the AWS CLI.
+Second, follow steps 1 and 2 in the [getting started section](https://docs.aws.amazon.com/comprehend/latest/dg/getting-started.html) of AWS Comprehend Medical. Here you will create an AWS account and install and configure the AWS CLI.
 
 # Running the demo
-The demo can be run by executing the following command from within the PredictAPI folder
+The demo can be run by executing the following command from within the PredictAPI folder.
 ```bash
 $ python app.py
 ```
