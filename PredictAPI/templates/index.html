@@ -12,27 +12,51 @@
                 {{ form.hidden_tag() }}
                 {{ form.file( class="btn btn-outline-dark" ) }}
                 {{ form.submit( class="btn btn-primary" ) }}
+                {% if form.file.errors %}
+                    {% for error in form.file.errors %}
+                        <div class="alert alert-warning">{{ error }}</div>
+                    {% endfor %}
+                {% endif %}
             </form>
         </div>
     </div>
     <div class="container">
         <div class="row">
-            <div class="list-group col-sm">
-                <h5>Extracted Entities</h5>
-                {% for entity in entities %}
-                    <div class="list-group-item">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h6 class="mb-1">{{ entity['Text'] }}</h6>
+            {% if entities %}
+                <div class="list-group col-sm">
+                    <h5>Extracted Entities</h5>
+                    {% for entity in entities %}
+                        <div class="list-group-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">{{ entity['Text'] }}</h6>
+                            </div>
+                            <p class="mb-1">Category: {{ entity['Category'] }}</p>
+                            <p class="mb-1">Type: {{ entity['Type'] }}</p>
+                            {% if entity['Attributes'] %}
+                                <div class="list-group-item">
+                                    <h6 class="mb-1">Attributes</h6>
+                                </div>
+                                {% for attribute in entity['Attributes'] %}
+                                    <div class="list-group-item">
+                                        <p class="mb-1"><h6>{{ attribute['Text'] }}</h6> Type: {{ attribute['Type'] }}</p>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
                         </div>
-                        <p class="mb-1">Category: {{ entity['Category'] }}</p>
-                        <p class="mb-1">Type: {{ entity['Type'] }}</p>
-                    </div>
-                {% endfor %}
-            </div>
-            <div class="col-sm">
-                <h5>Original Text</h5>
-                {{ text }}
-            </div>
+                    {% endfor %}
+                </div>
+                <div class="col-sm">
+                    <div class="row"><div class="color_box" style="background:orange;"></div>Protected Health Information</div>
+                    <div class="row"><div class="color_box" style="background:cyan;"></div>Anatomy</div>
+                    <div class="row"><div class="color_box" style="background:lightgreen;"></div>Medical Condition</div>
+                    <div class="row"><div class="color_box" style="background:yellow;"></div>Medication</div>
+                    <div class="row"><div class="color_box" style="background:pink;"></div>Test Treatment Procedure</div>
+                    <div class="row"><div class="color_box" style="background:lightyellow;"></div>Attribute</div>
+                    <br>
+                    <h5>Original Text</h5>
+                    <p style="white-space: pre-line">{{ text | safe }}</p>
+                </div>
+            {% endif %}
         </div>
     </div>
 {% endblock %}
