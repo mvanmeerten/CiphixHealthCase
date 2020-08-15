@@ -1,7 +1,7 @@
 # CiphixHealth Case
 NER of unstructured medical text using [AWS comprehend medical](https://aws.amazon.com/comprehend/medical/)
 
-# Installation
+# Installation (Python 3.7)
 This section describes how to run the demo. First, clone the repository and install the requirements (in a virtual environment).
 ```bash
 $ git clone https://github.com/mvanmeerten/CiphixHealthCase.git
