@@ -5,7 +5,7 @@ NER of unstructured medical text using [AWS comprehend medical](https://aws.amaz
 This section describes how to run the demo. First, clone the repository and install the requirements.
 ```bash
 $ git clone https://github.com/mvanmeerten/CiphixHealthCase.git
-$ cd CiphixHealthCase; pip install -r requirements.txt
+$ cd CiphixHealthCase/PredictAPI; pip install -r requirements.txt
 ```
 
 To use AWS comprehend medical, follow steps 1 and 2 in the [getting started section](https://docs.aws.amazon.com/comprehend/latest/dg/getting-started.html) of AWS Comprehend Medical. Here you will create an AWS account and install and configure the AWS CLI.
