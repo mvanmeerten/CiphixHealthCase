@@ -15,7 +15,7 @@ The demo can be run by executing the following command from within the PredictAP
 ```bash
 $ python app.py
 ```
-Navigate to http://127.0.0.1:5000/ and upload the test medical document, which be found [here](https://github.com/mvanmeerten/CiphixHealthCase/blob/master/PredictAPI/documents/MedDocTest.pdf)
+Navigate to http://127.0.0.1:5000/ and upload the test medical document, which be can found [here](https://github.com/mvanmeerten/CiphixHealthCase/blob/master/PredictAPI/documents/MedDocTest.pdf)
 
 In the image below, the extracted entities are shown. On the left, for each detected entity, a category, type and possible attribute are displayed. On the right, the original text is displayed where the entities are highlighted.
 
