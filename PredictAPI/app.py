@@ -11,7 +11,7 @@ from wtforms import SubmitField
 client = boto3.client(service_name='comprehendmedical', region_name='eu-west-2')
 
 # Init app
-UPLOAD_FOLDER = 'C:/Users/Martijn/PycharmProjects/CiphixHealthCase/PredictAPI/docs'
+UPLOAD_FOLDER = './documents'
 ALLOWED_EXTENSIONS = {'pdf'}
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "secret"
