@@ -17,7 +17,10 @@ $ python app.py
 ```
 Navigate to http://127.0.0.1:5000/ and upload the test medical document, which be found [here](https://github.com/mvanmeerten/CiphixHealthCase/blob/master/PredictAPI/documents/MedDocTest.pdf)
 
-![alt text](https://puu.sh/GicTt/2b9cc5fba4.png)
+In the image below, the extracted entities are shown. On the left, for each detected entity, a category, type and possible attribute are displayed. On the right, the original text is displayed where the entities are highlighted.
 
-# Dataset
-https://www.nature.com/articles/sdata201635
+![](https://puu.sh/GicTt/2b9cc5fba4.png)
+
+# NER Model
+This demo uses AWS Comprehend Medical. If I were to train my own model, I would use the [Clinical Bert model](https://github.com/EmilyAlsentzer/clinicalBERT) and train it on the [i2b2 dataset](https://www.i2b2.org/NLP/DataSets/Main.php). I have requested access to this dataset, but unfortunately have yet to receive it.
+
